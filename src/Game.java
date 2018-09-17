@@ -19,7 +19,6 @@ class Game {
 			for (int j = 0; j < chromosome.length; j++) {
 				chromosome[j] = Math.round(sigmoid(0.03 * r.nextGaussian()));
 			}
-
 		}
 
 		//Each element in m_data is a row or a chromosome

@@ -45,7 +45,6 @@ class Controller implements MouseListener
 		redAgent.reset();
 		calibrateTimer();
 	}
-
 	Controller fork(IAgent myShadowAgent, IAgent opponentShadowAgent) {
 		amIblue = model.amIblue(secret_symbol);
 		Controller c = new Controller(secret_symbol, amIblue ? myShadowAgent : opponentShadowAgent, amIblue ? opponentShadowAgent : myShadowAgent);
