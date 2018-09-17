@@ -22,7 +22,6 @@ class Game {
 
 		}
 
-
 		//Each element in m_data is a row or a chromosome
 
 		//Fitness function
