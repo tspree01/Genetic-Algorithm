@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4810aec9-e279-4cf9-a327-b623fa5ae2d3" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Genetic_Algorithm$Game.ic" NAME="Game Coverage Results" MODIFIED="1537211896629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="228032636">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="23" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="23" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="294" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="294" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.vcs.git.usages" />
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Genetic Algorithm" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/IAgent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#184#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1040">
+              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ReflexAgent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2208">
+              <caret line="139" selection-start-line="139" selection-end-line="139" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NeuralNet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2608">
+              <caret line="178" column="42" selection-start-line="178" selection-start-column="42" selection-end-line="178" selection-end-column="42" />
+              <folding>
+                <element signature="e#9343#9344#0" expanded="true" />
+                <element signature="e#9381#9382#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Matrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="563" column="36" selection-start-line="563" selection-start-column="36" selection-end-line="563" selection-end-column="36" />
+              <folding>
+                <element signature="e#11259#11260#0" expanded="true" />
+                <element signature="e#11283#11284#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3408">
+              <caret line="220" column="34" selection-start-line="220" selection-start-column="34" selection-end-line="220" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NeuralAgent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3024">
+              <caret line="190" selection-start-line="190" selection-end-line="190" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>rankAgents</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Model.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="width" value="1642" />
+    <option name="height" value="2092" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Genetic Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genetic Algorithm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Genetic Algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genetic Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="rankAgents&#9;PSI&#9;JAVA://Controller#rankAgents&#10;diff&#9;ACTION&#9;Diff.KeymapGroup" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537220031929" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/git-bash.exe" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/NeuralAgent.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tyler\IdeaProjects\Genetic Algorithm" />
+      <recent name="C:\Users\tyler\IdeaProjects\Genetic Algorithm\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game" />
+      <module name="Genetic Algorithm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Game" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4810aec9-e279-4cf9-a327-b623fa5ae2d3" name="Default Changelist" comment="" />
+      <created>1536867929471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536867929471</updated>
+      <workItem from="1536867933043" duration="1497000" />
+      <workItem from="1536869619794" duration="24000" />
+      <workItem from="1536870579876" duration="124000" />
+      <workItem from="1536876686775" duration="225000" />
+      <workItem from="1536951505296" duration="25000" />
+      <workItem from="1537037889592" duration="665000" />
+      <workItem from="1537042377147" duration="10987000" />
+      <workItem from="1537199360336" duration="7331000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20878000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1633" height="1053" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4913232" visible="true" weight="0.27174604" />
+      <window_info id="Structure" order="1" sideWeight="0.50867677" side_tool="true" visible="true" weight="0.27174604" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" sideWeight="0.5010846" side_tool="true" weight="0.2495238" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Learn" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38503253" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2495238" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3295238" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3295238" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Game.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Vec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/locks/LockSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="1043" selection-start-line="1043" selection-end-line="1043" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/locks/ReentrantLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/locks/AbstractQueuedSynchronizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="611" selection-start-line="611" selection-end-line="611" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="2293" column="23" selection-start-line="2293" selection-start-column="23" selection-end-line="2293" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="599" column="5" lean-forward="true" selection-start-line="599" selection-start-column="5" selection-end-line="599" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1040">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ReflexAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2208">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NeuralNet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2608">
+          <caret line="178" column="42" selection-start-line="178" selection-start-column="42" selection-end-line="178" selection-end-column="42" />
+          <folding>
+            <element signature="e#9343#9344#0" expanded="true" />
+            <element signature="e#9381#9382#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3408">
+          <caret line="220" column="34" selection-start-line="220" selection-start-column="34" selection-end-line="220" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NeuralAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="190" selection-start-line="190" selection-end-line="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Matrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="563" column="36" selection-start-line="563" selection-start-column="36" selection-end-line="563" selection-end-column="36" />
+          <folding>
+            <element signature="e#11259#11260#0" expanded="true" />
+            <element signature="e#11283#11284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Genetic Algorithm</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
