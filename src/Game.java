@@ -1,3 +1,6 @@
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -6,7 +9,8 @@ class Game {
 	private static double mutationRate = 0.1;
 	private static double adverageDeviation = 1.0;
 	private static double winnerSurviveRate = 0.6;
-	static  int winner = 0;
+	static int winner = 0;
+
 
 	static double[] evolveWeights() throws Exception {
 		// Create a random initial population
@@ -23,8 +27,10 @@ class Game {
 
 		for (int i = 0; i < 500 ; i++) {
 			//calculate the fitness of each chromosome in the population
+			long before = System.currentTimeMillis();
 			winner = Controller.doBattleNoGui(new ReflexAgent(), new NeuralAgent(population.row(i)));
-			System.out.println();
+			long after = System.currentTimeMillis();
+			System.out.println("how long it took to do the tournament: " + (after - before) );
 		}
 		//Each element in m_data is a row or a chromosome
 
