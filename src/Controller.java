@@ -159,7 +159,7 @@ class Controller implements MouseListener
 		c.view = new View(c, c.model, ss); // instantiates a JFrame, which spawns another thread to pump events and keeps the whole program running until the JFrame is closed
 		new Timer(20, c.view).start(); // creates an ActionEvent at regular intervals, which is handled by View.actionPerformed
 	}
-
+	// its a 1 if blue one wins and a -1 if red wins
 	static int doBattleNoGui(IAgent blue, IAgent red) throws Exception {
 		Object ss = new Object();
 		Controller c = new Controller(ss, blue, red);

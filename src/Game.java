@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 class Game {
+	private static int numberOfTourements = 100;
+	private static double mutationRate = 0.1;
+	private static double adverageDeviation = 1.0;
+	private static double winnerSurviveRate = 0.6;
+	static  int winner = 0;
 
-	private static double sigmoid(double x)
-	{
-		return 1 / (1 + Math.exp(-x));
-	}
-
-	static double[] evolveWeights() {
+	static double[] evolveWeights() throws Exception {
 		// Create a random initial population
 		Random r = new Random();
 		Matrix population = new Matrix(100, 291);
@@ -17,24 +17,34 @@ class Game {
 			double[] chromosome = population.row(i);
 
 			for (int j = 0; j < chromosome.length; j++) {
-				chromosome[j] = Math.round(sigmoid(0.03 * r.nextGaussian()));
+				chromosome[j] = 0.03 * r.nextGaussian();
 			}
 		}
 
+		for (int i = 0; i < 500 ; i++) {
+			//calculate the fitness of each chromosome in the population
+			winner = Controller.doBattleNoGui(new ReflexAgent(), new NeuralAgent(population.row(i)));
+			System.out.println();
+		}
 		//Each element in m_data is a row or a chromosome
 
-		//Fitness function
-		//Maybe the solution is you keep evolving the population/chromosomes until the red team wins
+		//call setWeights when you do the tournament
 
 
 		// Evolve the population
-		// todo: YOUR CODE WILL START HERE.
+
 		//       Please write some code to evolve this population.
+
 		//       (For tournament selection, you will need to call Controller.doBattleNoGui(agent1, agent2).)
 
 
 		// Return an arbitrary member from the population
 		return population.row(0);
+	}
+
+	static void mutate(Matrix population){
+
+
 	}
 
 

@@ -56,7 +56,6 @@ abstract class Layer
 		}
 	}
 
-
 	int outputCount()
 	{
 		return activation.length;
