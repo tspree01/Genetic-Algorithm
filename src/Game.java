@@ -1,30 +1,24 @@
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
-import java.util.TreeMap;
 
 class Game {
 	private static int numberOfTourements = 100;
 	private static double mutationRate = 0.1;
 	private static double adverageDeviation = 1.0;
 	private static double winnerSurviveRate = 0.6;
-	static int winner = 0;
+	private static double crossoverRate = 0.8;
 
 
 	static double[] evolveWeights() throws Exception {
 		// Create a random initial population
 		Random r = new Random();
-		Matrix population = new Matrix(100, 291);
-		ArrayList<Individual> individuals = new ArrayList<>();
-		long before = 0;
-		long after = 0;
+		Matrix p = new Matrix(100, 291);
+		ArrayList<Individual> population = new ArrayList<>();
 
 		for (int i = 0; i < 100; i++) {
-			double[] chromosome = population.row(i);
-			Individual individual = new Individual(population.row(i),0);
+			double[] chromosome = p.row(i);
+			Individual individual = new Individual(p.row(i), 0, false);
 
 			for (int j = 0; j < chromosome.length; j++) {
 				chromosome[j] = 0.03 * r.nextGaussian();
@@ -32,26 +26,15 @@ class Game {
 			for (int j = 0; j < individual.chromosome.length; j++) {
 				individual.chromosome[j] = 0.03 * r.nextGaussian();
 			}
-			individuals.add(individual);
+			population.add(individual);
 
 		}
-		for (int i = 0; i < 500; i++) {
+		//for (int i = 0; i < 500; i++) {
 		//calculate the fitness of each chromosome in the population
-			for (int j = 0; j < numberOfTourements; j++) {
-				before = System.currentTimeMillis();
-				winner = Controller.doBattleNoGui(new ReflexAgent(), new NeuralAgent(individuals.get(j).chromosome));
-				after = System.currentTimeMillis();
-				// If the Reflex agent wins then calculate the fitness of neural agent but if the neural agent wins it get a bonus for winning
+		calculateFitness(population);
 
-				if (winner == 1) {
-					individuals.get(j).fitness = (int)(after - before);
-				}
-				else if (winner == - 1) {
-					individuals.get(j).fitness = (int)(100 + 100/(after - before));
-				}
-
-			}
-		}
+		naturalSelection(population);
+		//}
 		//Each element in m_data is a row or a chromosome
 
 		//call setWeights when you do the tournament
@@ -61,10 +44,83 @@ class Game {
 
 		//       (For tournament selection, you will need to call Controller.doBattleNoGui(agent1, agent2).)
 		// Return an arbitrary member from the population
-		return population.row(0);
+		return p.row(0);
 	}
 
-	static void mutate(Matrix population) {
+	static void calculateFitness(ArrayList<Individual> population) throws Exception {
+		long winner = 0;
+		FitnessComparator fitnessComp = new FitnessComparator();
+		for (int j = 0; j < numberOfTourements; j++) {
+			long before = System.currentTimeMillis();
+			winner = Controller.doBattleNoGui(new ReflexAgent(), new NeuralAgent(population.get(j).chromosome));
+			long after = System.currentTimeMillis();
+
+			// If the Reflex agent wins then calculate the fitness of neural agent but if the neural agent wins it get a bonus for winning
+			if (winner == 1) {
+				population.get(j).fitness = (after - before);
+				population.get(j).win = false;
+			}
+			else if (winner == - 1) {
+				population.get(j).fitness = (100 + 100 / (after - before));
+				population.get(j).win = true;
+			}
+			else {
+				population.get(j).fitness = (after - before) / 2;
+			}
+		}
+		population.sort(fitnessComp);
+	}
+
+
+	static void crossover(ArrayList<Individual> population) {
+		Random r = new Random();
+		if (crossoverRate > r.nextDouble()) {
+
+		}
+		else {
+
+		}
+
+	}
+
+	static void naturalSelection(ArrayList<Individual> population) throws Exception {
+		int winner = 0;
+		Random r = new Random();
+		Individual redAgent1 = population.get(r.nextInt(100));
+		Individual redAgent2 = population.get(r.nextInt(100));
+		for (int j = 0; j < numberOfTourements; j++) {
+			long before = System.currentTimeMillis();
+			winner = Controller.doBattleNoGui(new NeuralAgent(redAgent1.chromosome), new NeuralAgent(redAgent2.chromosome));
+			long after = System.currentTimeMillis();
+
+			if (winnerSurviveRate > r.nextDouble()) {
+				if (winner == 1) {
+					population.remove(redAgent2);
+				}
+				else if (winner == - 1) {
+					population.remove(redAgent1);
+				}
+			}
+			else {
+				if (winner == 1) {
+					population.remove(redAgent1);
+				}
+				else if (winner == - 1) {
+					population.remove(redAgent2);
+				}
+
+			}
+
+		}
+
+	}
+
+	static void selectParent(ArrayList<Individual> population) {
+
+
+	}
+
+	static void mutate(ArrayList<Individual> population) {
 
 
 	}
@@ -78,11 +134,11 @@ class Game {
 
 }
 
-class FitnessComparator implements Comparator<Integer> {
+class FitnessComparator implements Comparator<Individual> {
 
-	public int compare(Integer o1, Integer o2) {
-		if (o1 > o2) { return -1; }
-		else if ( o1 < o2) { return 1; }
+	public int compare(Individual indiv1, Individual indiv2) {
+		if (indiv1.fitness > indiv2.fitness) { return - 1; }
+		else if (indiv1.fitness < indiv2.fitness) { return 1; }
 		return 0;
 	}
 

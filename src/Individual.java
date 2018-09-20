@@ -1,9 +1,11 @@
 public class Individual {
 	double[] chromosome;
-	int fitness = 0;
+	long fitness = 0;
+	boolean win = false;
 
-	public Individual(double[] chromosome, int fitness) {
+	public Individual(double[] chromosome, long fitness, boolean win) {
 		this.chromosome = chromosome;
 		this.fitness = fitness;
+		this.win = win;
 	}
 }
