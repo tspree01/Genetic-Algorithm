@@ -4,7 +4,8 @@ import java.util.Random;
 
 class Game {
 	private static int numberOfTourements = 100;
-	private static double mutationRate = 0.1;
+	static Random rand = new Random();
+	private static double mutationRate = 0.02 * rand.nextGaussian();
 	private static double adverageDeviation = 1.0;
 	private static double winnerSurviveRate = 0.7;
 	private static double crossoverRate = 0.8;
@@ -24,18 +25,19 @@ class Game {
 				chromosome[j] = 0.03 * r.nextGaussian();
 			}
 			for (int j = 0; j < individual.chromosome.length; j++) {
-				individual.chromosome[j] = 0.03 * r.nextGaussian();
+				individual.chromosome[j] = 0.09 * r.nextGaussian();
 			}
 			population.add(individual);
 
 		}
 		//for (int i = 0; i < 500; i++) {
 		//calculate the fitness of each chromosome in the population
+		// either do tourement or do mutate
 		calculateFitness(population);
 
 		naturalSelection(population);
+		crossover(population);
 		//}
-		//Each element in m_data is a row or a chromosome
 
 		//call setWeights when you do the tournament
 		// Evolve the population
@@ -73,32 +75,49 @@ class Game {
 	}
 
 
-	static void crossover(ArrayList<Individual> population) {
+	static void crossover(ArrayList<Individual> population, Individual winnerOfFight) {
 		Random r = new Random();
+		Individual offspring;
+		boolean notOver291 = true;
+
+		//Make sure that you dont get over 100%
+		while (notOver291) {
+			int percentOfParent1 = (r.nextInt(winnerOfFight.chromosome.length));
+			int percentOfParent2 = (r.nextInt());
+			if (percentOfParent1 + percentOfParent2 < 291) {
+				notOver291 = false;
+			}
+		}
+
 		if (crossoverRate > r.nextDouble()) {
+
 
 		}
 		else {
 
 		}
-
 	}
 
 	static void naturalSelection(ArrayList<Individual> population) throws Exception {
 		int winner = 0;
 		Random r = new Random();
-		double test = r.nextDouble();
+		double randomPercent = r.nextDouble();
 
-		int tests = r.nextInt(population.size());
-		int testss = r.nextInt(population.size());
-		Individual redAgent1 = population.get(tests);
-		Individual redAgent2 = population.get(testss);
+		int randomParent1 = r.nextInt(population.size());
+		int randomParent2 = r.nextInt(population.size());
+		Individual redAgent1 = population.get(randomParent1);
+		Individual redAgent2 = population.get(randomParent2);
 
 		long before = System.currentTimeMillis();
-		winner = Controller.doBattleNoGui(new NeuralAgent(redAgent1.chromosome), new NeuralAgent(redAgent2.chromosome));
+		if (redAgent1.fitness > redAgent2.fitness && winnerSurviveRate > randomPercent) {
+			population.remove(redAgent2);
+		}
+		else {
+			population.remove(redAgent1);
+		}
 		long after = System.currentTimeMillis();
 
-		if (winnerSurviveRate > test) {
+/*		if (winnerSurviveRate > randomPercent) {
 			if (winner == 1) {
 				population.remove(redAgent2);
 			}
@@ -113,19 +132,38 @@ class Game {
 			else if (winner == - 1) {
 				population.remove(redAgent2);
 			}
-
-		}
-
-
+		}*/
 	}
 
-	static void selectParent(ArrayList<Individual> population) {
+	static Individual selectParents(ArrayList<Individual> population, Individual winnerOfFight) {
+		Random r = new Random();
+		Individual offspring;
 
+		boolean notFoundParent = true;
 
+		winnerOfFight = population.get(r.nextInt(population.size()));
+
+		//continue to pick parents until one is close to the first parent's fitness
+		while (notFoundParent) {
+			//check to see if the parent is close in fitness to the first parent picked
+			for (int i = 0; i < 3; i++) {
+				if (winnerOfFight.fitness - population.get(r.nextInt(population.size())).fitness < 5) {
+					offspring = population.get(r.nextInt(population.size()));
+					notFoundParent = false;
+					return offspring;
+				}
+				else {
+
+				}
+			}
+		}
+		return null;
 	}
 
 	static void mutate(ArrayList<Individual> population) {
+		for (int i = 0; i < population.size(); i++) {
 
+		}
 
 	}
 
