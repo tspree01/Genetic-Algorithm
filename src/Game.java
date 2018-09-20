@@ -6,7 +6,7 @@ class Game {
 	private static int numberOfTourements = 100;
 	private static double mutationRate = 0.1;
 	private static double adverageDeviation = 1.0;
-	private static double winnerSurviveRate = 0.6;
+	private static double winnerSurviveRate = 0.7;
 	private static double crossoverRate = 0.8;
 
 
@@ -66,6 +66,7 @@ class Game {
 			}
 			else {
 				population.get(j).fitness = (after - before) / 2;
+				population.get(j).tie = true;
 			}
 		}
 		population.sort(fitnessComp);
@@ -86,32 +87,35 @@ class Game {
 	static void naturalSelection(ArrayList<Individual> population) throws Exception {
 		int winner = 0;
 		Random r = new Random();
-		Individual redAgent1 = population.get(r.nextInt(100));
-		Individual redAgent2 = population.get(r.nextInt(100));
-		for (int j = 0; j < numberOfTourements; j++) {
-			long before = System.currentTimeMillis();
-			winner = Controller.doBattleNoGui(new NeuralAgent(redAgent1.chromosome), new NeuralAgent(redAgent2.chromosome));
-			long after = System.currentTimeMillis();
+		double test = r.nextDouble();
 
-			if (winnerSurviveRate > r.nextDouble()) {
-				if (winner == 1) {
-					population.remove(redAgent2);
-				}
-				else if (winner == - 1) {
-					population.remove(redAgent1);
-				}
+		int tests = r.nextInt(population.size());
+		int testss = r.nextInt(population.size());
+		Individual redAgent1 = population.get(tests);
+		Individual redAgent2 = population.get(testss);
+
+		long before = System.currentTimeMillis();
+		winner = Controller.doBattleNoGui(new NeuralAgent(redAgent1.chromosome), new NeuralAgent(redAgent2.chromosome));
+		long after = System.currentTimeMillis();
+
+		if (winnerSurviveRate > test) {
+			if (winner == 1) {
+				population.remove(redAgent2);
 			}
-			else {
-				if (winner == 1) {
-					population.remove(redAgent1);
-				}
-				else if (winner == - 1) {
-					population.remove(redAgent2);
-				}
-
+			else if (winner == - 1) {
+				population.remove(redAgent1);
+			}
+		}
+		else {
+			if (winner == 1) {
+				population.remove(redAgent1);
+			}
+			else if (winner == - 1) {
+				population.remove(redAgent2);
 			}
 
 		}
+
 
 	}
 
