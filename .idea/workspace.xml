@@ -4,6 +4,7 @@
     <list default="true" id="4810aec9-e279-4cf9-a327-b623fa5ae2d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Genetic Algorithm/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetic Algorithm/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -87,14 +88,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
-          <entry key="java" value="7367" />
-          <entry key="txt" value="260" />
+          <entry key="java" value="7884" />
+          <entry key="txt" value="333" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7367" />
-          <entry key="PLAIN_TEXT" value="272" />
+          <entry key="JAVA" value="7884" />
+          <entry key="PLAIN_TEXT" value="345" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -133,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-706">
-              <caret line="163" selection-start-line="163" selection-end-line="163" />
+            <state relative-caret-position="399">
+              <caret line="198" column="40" selection-start-line="198" selection-start-column="40" selection-end-line="198" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -142,7 +143,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="96">
               <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
@@ -151,8 +152,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="41" column="2" selection-start-line="41" selection-end-line="43" selection-end-column="15" />
+            <state relative-caret-position="730">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -169,8 +170,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Individual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+            <state relative-caret-position="80">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -246,9 +247,9 @@
         <option value="$PROJECT_DIR$/src/Chromosome.java" />
         <option value="$PROJECT_DIR$/src/NeuralNet.java" />
         <option value="$PROJECT_DIR$/src/Tndividual.java" />
-        <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/Individual.java" />
         <option value="$PROJECT_DIR$/src/IAgent.java" />
+        <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
       </list>
     </option>
@@ -266,7 +267,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
+    <option name="x" value="-10" />
     <option name="width" value="1642" />
     <option name="height" value="2080" />
   </component>
@@ -300,7 +301,7 @@
     <property name="SearchEverywhereHistoryKey" value="rankAgents&#9;PSI&#9;JAVA://Controller#rankAgents&#10;diff&#9;ACTION&#9;Diff.KeymapGroup" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537541636241" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537548040021" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -388,7 +389,7 @@
       <workItem from="1537309281400" duration="30799000" />
       <workItem from="1537412322161" duration="604000" />
       <workItem from="1537417849117" duration="32000" />
-      <workItem from="1537453337797" duration="36282000" />
+      <workItem from="1537453337797" duration="42631000" />
     </task>
     <task id="LOCAL-00001" summary="AI">
       <created>1537221150594</created>
@@ -446,7 +447,21 @@
       <option name="project" value="LOCAL" />
       <updated>1537537063463</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="GA working?">
+      <created>1537541705450</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1537541705452</updated>
+    </task>
+    <task id="LOCAL-00010" summary="changed calculate fitness to inside natural selection">
+      <created>1537544636422</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1537544636422</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -455,14 +470,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108838000" />
+    <option name="totallyTimeSpent" value="115187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1633" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.591133" visible="true" weight="0.2920635" />
-      <window_info id="Structure" order="1" sideWeight="0.408867" side_tool="true" visible="true" weight="0.2920635" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5918699" visible="true" weight="0.28804007" />
+      <window_info id="Structure" order="1" sideWeight="0.40813008" side_tool="true" visible="true" weight="0.28804007" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -472,7 +486,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3394794" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3329718" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -482,15 +496,15 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49968255" weight="0.15509762" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" show_stripe_button="false" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2495238" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.3295238" />
-      <window_info anchor="right" id="Database" order="8" weight="0.3295238" />
-      <window_info anchor="right" id="Maven Projects" order="9" weight="0.3295238" />
+      <window_info anchor="right" id="Database" order="8" show_stripe_button="false" weight="0.3295238" />
+      <window_info anchor="right" id="Maven Projects" order="9" show_stripe_button="false" weight="0.3295238" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +546,9 @@
     <MESSAGE value="implemented natural selection and select parents" />
     <MESSAGE value="crossover implemented" />
     <MESSAGE value="implemented mutate but its most likely wrong" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented mutate but its most likely wrong" />
+    <MESSAGE value="GA working?" />
+    <MESSAGE value="changed calculate fitness to inside natural selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed calculate fitness to inside natural selection" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -541,12 +557,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Game.java</url>
-          <line>69</line>
+          <line>59</line>
           <properties />
-          <option name="timeStamp" value="111" />
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Vec.java">
@@ -634,34 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Individual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ReflexAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-706">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IAgent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -672,10 +664,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ReflexAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Individual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="198" column="40" selection-start-line="198" selection-start-column="40" selection-end-line="198" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="41" column="2" selection-start-line="41" selection-end-line="43" selection-end-column="15" />
+        <state relative-caret-position="730">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>

@@ -1,16 +1,11 @@
 // The contents of this file are dedicated to the public domain.
 // (See http://creativecommons.org/publicdomain/zero/1.0/)
 
-import java.awt.Graphics;
-import java.io.IOException;
-import javax.swing.Timer;
-import java.util.LinkedList;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Comparator;
-import java.util.Arrays;
-import java.awt.event.MouseListener;
+import javax.swing.*;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 class Controller implements MouseListener
 {
@@ -160,16 +155,14 @@ class Controller implements MouseListener
 		new Timer(20, c.view).start(); // creates an ActionEvent at regular intervals, which is handled by View.actionPerformed
 	}
 	// its a 1 if blue one wins and a -1 if red wins
-	static int doBattleNoGui(IAgent blue, IAgent red) throws Exception {
+	static long doBattleNoGui(IAgent blue, IAgent red) throws Exception {
 		Object ss = new Object();
 		Controller c = new Controller(ss, blue, red);
 		c.init();
 		while(c.update()) { }
 		c.model.setPerspectiveBlue(c.secret_symbol);
-		if(c.model.getFlagEnergySelf() < 0.0f && c.model.getFlagEnergyOpponent() >= 0.0f)
-			return -1;
-		else if(c.model.getFlagEnergyOpponent() < 0.0f && c.model.getFlagEnergySelf() >= 0.0f)
-			return 1;
+		if (c.model.getFlagEnergySelf() < 0.0f && c.model.getFlagEnergyOpponent() >= 0.0f) { return - 1 * c.getIter(); }
+		else if (c.model.getFlagEnergyOpponent() < 0.0f && c.model.getFlagEnergySelf() >= 0.0f) { return c.getIter(); }
 		else
 			return 0;
 	}
@@ -196,7 +189,7 @@ class Controller implements MouseListener
 					continue;
 				if(verbose)
 					System.out.print("	" + agents.get(i).getClass().getName() + " vs " + agents.get(j).getClass().getName() + ". Winner: ");
-				int outcome = Controller.doBattleNoGui(agents.get(i), agents.get(j));
+				int outcome = (int) Controller.doBattleNoGui(agents.get(i), agents.get(j));
 				if(outcome > 0) {
 					if(verbose)
 						System.out.println(agents.get(i).getClass().getName());
