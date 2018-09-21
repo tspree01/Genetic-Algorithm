@@ -7,7 +7,7 @@ class Game {
 	static Random rand = new Random();
 	//private static double mutationRate = 0.02 * rand.nextGaussian();
 	private static double adverageDeviation = 1.5;
-	private static double winnerSurviveRate = 0.9;
+	private static double winnerSurviveRate = 0.7;
 	private static double crossoverRate = 0.8;
 
 
@@ -15,7 +15,11 @@ class Game {
 		// Create a random initial population
 		Random r = new Random();
 		Matrix p = new Matrix(100, 291);
+		FitnessComparator fitnessComp = new FitnessComparator();
 		ArrayList<Individual> population = new ArrayList<>();
+		ArrayList<Individual> chads = new ArrayList<>();
+		double[] test = new double[291];
+		Individual chad = new Individual(test, 0);
 
 		for (int i = 0; i < 100; i++) {
 			double[] chromosome = p.row(i);
@@ -30,14 +34,24 @@ class Game {
 			population.add(individual);
 
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i < 50; i++) {
 			//calculate the fitness of each chromosome in the population
 			// either do tourement or do mutate
 			calculatePopulationFitness(population);
+
+/*			if (chad != null && chad.win){
+				chads.add(chad);
+			}*/
 			naturalSelection(population);
 			mutate(population);
 			population.size();
 		}
+/*		for (Individual individual : population) {
+			System.out.println("fitness: " + chad.fitness);
+			System.out.println("Tie: " + chad.tie);
+			System.out.println("Win: " + chad.win);
+			System.out.println();
+		}*/
 
 		//call setWeights when you do the tournament
 		// Evolve the population
@@ -46,12 +60,21 @@ class Game {
 
 		//       (For tournament selection, you will need to call Controller.doBattleNoGui(agent1, agent2).)
 		// Return an arbitrary member from the population
-		return p.row(0);
+		population.sort(fitnessComp);
+		chads.sort(fitnessComp);
+/*		for (Individual chad : chads) {
+			if (chad.tie){
+				return chad.chromosome;
+			}
+		}*/
+		return chad.chromosome;
 	}
 
 	static void calculatePopulationFitness(ArrayList<Individual> population) throws Exception {
 		long winner = 0;
 		FitnessComparator fitnessComp = new FitnessComparator();
+		double[] chromosome = new double[291];
+		Individual individual = new Individual(chromosome, 0);
 		for (int j = 0; j < numberOfTourements; j++) {
 			long before = System.currentTimeMillis();
 			winner = Controller.doBattleNoGui(new ReflexAgent(), new NeuralAgent(population.get(j).chromosome));
@@ -61,14 +84,17 @@ class Game {
 			if (winner == 1) {
 				population.get(j).fitness = (after - before);
 				population.get(j).win = false;
+				population.get(j).tie = false;
 			}
 			else if (winner == - 1) {
 				population.get(j).fitness = (10000 + 10000 / (after - before));
 				population.get(j).win = true;
+				population.get(j).tie = false;
 			}
-			else {
-				population.get(j).fitness = 0;
+			else if (winner == 0) {
+				population.get(j).fitness = (after - before);
 				population.get(j).tie = true;
+				population.get(j).win = false;
 			}
 		}
 		population.sort(fitnessComp);
@@ -103,7 +129,7 @@ class Game {
 					offspring.chromosome[i] = winnerOfFight.chromosome[i];
 				}
 				else if (i > percentOfParent1) {
-					offspring.chromosome[i] = winnerOfFight.chromosome[i];
+					offspring.chromosome[i] = parent2.chromosome[i];
 				}
 			}
 			population.add(offspring);
@@ -177,8 +203,10 @@ class Game {
 
 	static void mutate(ArrayList<Individual> population) {
 		Random r = new Random();
+		Individual individual;
 		double mutationRate = 0.0;
 		for (int i = 0; i < population.size(); i++) {
+			//int test = r.nextInt(population.get(i).chromosome.length);
 			mutationRate = 0.1;
 			double randomPercent = r.nextDouble();
 			if (mutationRate > randomPercent) {
