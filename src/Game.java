@@ -19,10 +19,10 @@ class Game {
 
 		for (int i = 0; i < 100; i++) {
 			double[] chromosome = p.row(i);
-			Individual individual = new Individual(p.row(i), 0, false);
+			Individual individual = new Individual(p.row(i), 0);
 
 			for (int j = 0; j < chromosome.length; j++) {
-				chromosome[j] = 0.03 * r.nextGaussian();
+				chromosome[j] = 0.09 * r.nextGaussian();
 			}
 			for (int j = 0; j < individual.chromosome.length; j++) {
 				individual.chromosome[j] = 0.09 * r.nextGaussian();
@@ -30,14 +30,13 @@ class Game {
 			population.add(individual);
 
 		}
-		//for (int i = 0; i < 500; i++) {
+		for (int i = 0; i < 500; i++) {
 		//calculate the fitness of each chromosome in the population
 		// either do tourement or do mutate
-		calculateFitness(population);
-
+			calculatePopulationFitness(population);
 		naturalSelection(population);
-		crossover(population);
-		//}
+
+		}
 
 		//call setWeights when you do the tournament
 		// Evolve the population
@@ -49,7 +48,7 @@ class Game {
 		return p.row(0);
 	}
 
-	static void calculateFitness(ArrayList<Individual> population) throws Exception {
+	static void calculatePopulationFitness(ArrayList<Individual> population) throws Exception {
 		long winner = 0;
 		FitnessComparator fitnessComp = new FitnessComparator();
 		for (int j = 0; j < numberOfTourements; j++) {
@@ -63,38 +62,54 @@ class Game {
 				population.get(j).win = false;
 			}
 			else if (winner == - 1) {
-				population.get(j).fitness = (100 + 100 / (after - before));
+				population.get(j).fitness = (10000 + 10000 / (after - before));
 				population.get(j).win = true;
 			}
 			else {
-				population.get(j).fitness = (after - before) / 2;
+				population.get(j).fitness = 0;
 				population.get(j).tie = true;
 			}
 		}
 		population.sort(fitnessComp);
 	}
+/*
+	static Individual calculateIndividualFitness(Individual individual){
+		long before = System.currentTimeMillis();
+		Controller.doBattleNoGui(new ReflexAgent(), new NeuralAgent());
+		long after = System.currentTimeMillis();
 
+	}*/
 
 	static void crossover(ArrayList<Individual> population, Individual winnerOfFight) {
 		Random r = new Random();
-		Individual offspring;
+		double[] chromosome = new double[291];
+		Individual offspring = new Individual(chromosome, 0);
 		boolean notOver291 = true;
+		Individual parent2 = selectParents(population, winnerOfFight);
 
 		//Make sure that you dont get over 100%
-		while (notOver291) {
+		//while (notOver291) {
 			int percentOfParent1 = (r.nextInt(winnerOfFight.chromosome.length));
-			int percentOfParent2 = (r.nextInt());
-			if (percentOfParent1 + percentOfParent2 < 291) {
-				notOver291 = false;
+		//int percentOfParent2 = (r.nextInt(winnerOfFight.chromosome.length - percentOfParent1));
+		if (percentOfParent1 + percentOfParent1 < 291) {
+			//notOver291 = false;
 			}
-		}
+		//}
 
 		if (crossoverRate > r.nextDouble()) {
-
-
+			for (int i = 0; i < winnerOfFight.chromosome.length; i++) {
+				if (i < percentOfParent1) {
+					offspring.chromosome[i] = winnerOfFight.chromosome[i];
+				}
+				else if (i > percentOfParent1) {
+					offspring.chromosome[i] = winnerOfFight.chromosome[i];
+				}
+			}
+			population.add(offspring);
 		}
 		else {
-
+			//TODO:This might be a bug
+			population.add(winnerOfFight);
 		}
 	}
 
@@ -111,9 +126,11 @@ class Game {
 		long before = System.currentTimeMillis();
 		if (redAgent1.fitness > redAgent2.fitness && winnerSurviveRate > randomPercent) {
 			population.remove(redAgent2);
+			crossover(population, redAgent1);
 		}
 		else {
 			population.remove(redAgent1);
+			crossover(population, redAgent2);
 		}
 		long after = System.currentTimeMillis();
 
@@ -137,27 +154,27 @@ class Game {
 
 	static Individual selectParents(ArrayList<Individual> population, Individual winnerOfFight) {
 		Random r = new Random();
-		Individual offspring;
+		Individual parent2 = population.get(r.nextInt(population.size()));
+		WeightComparator weightComp = new WeightComparator();
+		ArrayList<Individual> parents = new ArrayList<>();
+
+		double sumOfParentWeight = 0.0;
 
 		boolean notFoundParent = true;
 
-		winnerOfFight = population.get(r.nextInt(population.size()));
-
 		//continue to pick parents until one is close to the first parent's fitness
-		while (notFoundParent) {
-			//check to see if the parent is close in fitness to the first parent picked
-			for (int i = 0; i < 3; i++) {
-				if (winnerOfFight.fitness - population.get(r.nextInt(population.size())).fitness < 5) {
-					offspring = population.get(r.nextInt(population.size()));
-					notFoundParent = false;
-					return offspring;
-				}
-				else {
-
-				}
+		//while (notFoundParent) {
+		//check to see if the parent is close in fitness to the first parent picked
+		for (int i = 0; i < 5; i++) {
+			parent2 = population.get(r.nextInt(population.size()));
+			for (int j = 0; j < parent2.chromosome.length; j++) {
+				sumOfParentWeight += Math.abs((winnerOfFight.chromosome[j] - parent2.chromosome[j]));
 			}
+			parent2.sumOfWeights = sumOfParentWeight;
+			parents.add(parent2);
 		}
-		return null;
+		parents.sort(weightComp);
+		return parents.get(0);
 	}
 
 	static void mutate(ArrayList<Individual> population) {
@@ -186,3 +203,12 @@ class FitnessComparator implements Comparator<Individual> {
 
 }
 
+class WeightComparator implements Comparator<Individual> {
+
+	public int compare(Individual indiv1, Individual indiv2) {
+		if (indiv1.sumOfWeights > indiv2.sumOfWeights) { return 1; }
+		else if (indiv1.sumOfWeights < indiv2.sumOfWeights) { return - 1; }
+		return 0;
+	}
+
+}
