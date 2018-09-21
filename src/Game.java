@@ -17,9 +17,9 @@ class Game {
 		Matrix p = new Matrix(100, 291);
 		FitnessComparator fitnessComp = new FitnessComparator();
 		ArrayList<Individual> population = new ArrayList<>();
-		ArrayList<Individual> chads = new ArrayList<>();
-		double[] test = new double[291];
-		Individual chad = new Individual(test, 0);
+		//ArrayList<Individual> chads = new ArrayList<>();
+		//double[] test = new double[291];
+		//Individual chad = new Individual(test, 0);
 
 		for (int i = 0; i < 100; i++) {
 			double[] chromosome = p.row(i);
@@ -61,13 +61,13 @@ class Game {
 		//       (For tournament selection, you will need to call Controller.doBattleNoGui(agent1, agent2).)
 		// Return an arbitrary member from the population
 		population.sort(fitnessComp);
-		chads.sort(fitnessComp);
+		//chads.sort(fitnessComp);
 /*		for (Individual chad : chads) {
 			if (chad.tie){
 				return chad.chromosome;
 			}
 		}*/
-		return chad.chromosome;
+		return population.get(0).chromosome;
 	}
 
 	static void calculatePopulationFitness(ArrayList<Individual> population) throws Exception {
@@ -82,16 +82,20 @@ class Game {
 
 			// If the Reflex agent wins then calculate the fitness of neural agent but if the neural agent wins it get a bonus for winning
 			if (winner == 1) {
+				//System.out.println("I had a loser");
 				population.get(j).fitness = (after - before);
 				population.get(j).win = false;
 				population.get(j).tie = false;
 			}
 			else if (winner == - 1) {
+				System.out.println("I had a winner");
+
 				population.get(j).fitness = (10000 + 10000 / (after - before));
 				population.get(j).win = true;
 				population.get(j).tie = false;
 			}
 			else if (winner == 0) {
+				//System.out.println("I had a tied");
 				population.get(j).fitness = (after - before);
 				population.get(j).tie = true;
 				population.get(j).win = false;
@@ -143,11 +147,43 @@ class Game {
 	static void naturalSelection(ArrayList<Individual> population) throws Exception {
 		Random r = new Random();
 		double randomPercent = r.nextDouble();
+		int winner = 0;
 
 		int randomParent1 = r.nextInt(population.size());
 		int randomParent2 = r.nextInt(population.size());
 		Individual redAgent1 = population.get(randomParent1);
 		Individual redAgent2 = population.get(randomParent2);
+
+		long timeBeforeAgent1 = System.currentTimeMillis();
+		winner = Controller.doBattleNoGui(new ReflexAgent(), new NeuralAgent(redAgent1.chromosome));
+		long timeAfterAgent1 = System.currentTimeMillis();
+
+		// If the Reflex agent wins then calculate the fitness of neural agent but if the neural agent wins it get a bonus for winning
+		if (winner == 1) {
+			//System.out.println("I had a loser");
+			redAgent1.fitness = (timeAfterAgent1 - timeBeforeAgent1);
+			redAgent1.win = false;
+			redAgent1.tie = false;
+		}
+		else if (winner == - 1) {
+			System.out.println("I had a winner");
+
+			redAgent1.fitness = (10000 + 10000 / (timeAfterAgent1 - timeBeforeAgent1));
+			redAgent1.win = true;
+			redAgent1.tie = false;
+		}
+		else if (winner == 0) {
+			//System.out.println("I had a tied");
+			redAgent2.fitness = (timeAfterAgent1 - timeBeforeAgent1);
+			redAgent2.tie = true;
+			redAgent2.win = false;
+		}
+
+		long timeBeforeAgent2 = System.currentTimeMillis();
+		winner = Controller.doBattleNoGui(new ReflexAgent(), new NeuralAgent(redAgent1.chromosome));
+		long timeAfterAgent2 = System.currentTimeMillis();
+
+
 
 		if (redAgent1.fitness > redAgent2.fitness && winnerSurviveRate > randomPercent) {
 			population.remove(redAgent2);
