@@ -1,23 +1,16 @@
 // The contents of this file are dedicated to the public domain.
 // (See http://creativecommons.org/publicdomain/zero/1.0/)
 
-import javax.swing.JFrame;
-import java.awt.Graphics;
-import javax.swing.JPanel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.io.File;
-import java.awt.Image;
-import java.util.ArrayList;
-import java.awt.Color;
 import javax.imageio.ImageIO;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.DataLine;
-import javax.sound.sampled.Clip;
-import java.awt.event.WindowEvent;
+import javax.sound.sampled.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.io.File;
+import java.util.ArrayList;
 
 public class View extends JFrame implements ActionListener {
 	public static final int REPLAY_GRANULARITY = 30;
@@ -240,9 +233,10 @@ public class View extends JFrame implements ActionListener {
 				// Give the agents a chance to make decisions
 				if(!controller.update()) {
 					model.setPerspectiveBlue(secret_symbol);
-					if(model.getFlagEnergySelf() < 0.0f && model.getFlagEnergyOpponent() >= 0.0f)
-						System.out.println("\nRed wins!");
-					else if(model.getFlagEnergyOpponent() < 0.0f && model.getFlagEnergySelf() >= 0.0f)
+					if (model.getFlagEnergySelf() < 0.0f && model.getFlagEnergyOpponent() >= 0.0f) {
+						System.out.println("\nRed Chads wins!!");
+					}
+					else if (model.getFlagEnergyOpponent() < 0.0f && model.getFlagEnergySelf() >= 0.0f)
 						System.out.println("\nBlue wins!");
 					else
 						System.out.println("\nTie.");
